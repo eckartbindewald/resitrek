@@ -1,4 +1,4 @@
-# Protein Function Prediction with protrekfun
+# Protein Function Prediction with ResiTrek
 
 
 ## Installation
