@@ -18,6 +18,7 @@ if len(sys.argv) < 4:
     sys.exit(0)
 
 PROTREK_PATH = sys.argv[1]
+print("# ProTrek path was set to", PROTREK_PATH)
 MODEL_PATH = os.path.join(PROTREK_PATH, 'model')
 # print("Adding path", PROTREK_PATH)
 if not os.path.exists(os.path.join(PROTREK_PATH, 'model')):
@@ -40,14 +41,14 @@ from biopandas.mmcif import PandasMmcif
 
 import pickle
 
-# Load model
+# important paths to weights and config files of the model
 config = {
-    "protein_config": "weights/ProTrek_650M_UniRef50/esm2_t33_650M_UR50D",
-    "text_config": "weights/ProTrek_650M_UniRef50/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext",
-    "structure_config": "weights/ProTrek_650M_UniRef50/foldseek_t30_150M",
+    "protein_config": os.path.join(PROTREK_PATH, 'weights/ProTrek_650M_UniRef50/esm2_t33_650M_UR50D'),
+    "text_config": os.path.join(PROTREK_PATH, 'weights/ProTrek_650M_UniRef50/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext'),
+    "structure_config": os.path.join(PROTREK_PATH, 'weights/ProTrek_650M_UniRef50/foldseek_t30_150M'),
+    "from_checkpoint": os.path.join(PROTREK_PATH, 'weights/ProTrek_650M_UniRef50/ProTrek_650M_UniRef50.pt'),
     "load_protein_pretrained": False,
-    "load_text_pretrained": False,
-    "from_checkpoint": "weights/ProTrek_650M_UniRef50/ProTrek_650M_UniRef50.pt"
+    "load_text_pretrained": False
 }
 
 PARAMS = {
