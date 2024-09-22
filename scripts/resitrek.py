@@ -17,12 +17,12 @@ if len(sys.argv) < 4:
     print(USAGE)
     sys.exit(0)
 
-PROTREK_PATH = sys.argv[1]
+PROTREK_PATH = os.path.abspath(sys.argv[1])
 print("# ProTrek path was set to", PROTREK_PATH)
 MODEL_PATH = os.path.join(PROTREK_PATH, 'model')
 # print("Adding path", PROTREK_PATH)
-if not os.path.exists(os.path.join(PROTREK_PATH, 'model')):
-    raise FileNotFoundError("Could not find subdirectory 'model' within ProTrek installation directory", MODEL_PATH)
+if not os.path.exists(MODEL_PATH):
+    raise FileNotFoundError("Could not find subdirectory 'model' within ProTrek installation directory:", MODEL_PATH)
     
 sys.path.append(os.path.abspath(PROTREK_PATH))
 
