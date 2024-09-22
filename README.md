@@ -31,7 +31,6 @@ With
     
 ### Example:
     
-
 Let's assume that the installation directories of `resitrek` and `ProTrek` are part of the same directory.
 In other words, from within directory `resitrek` the relative pathname to the ProTrek installation directory
 is `../ProTrek`.
