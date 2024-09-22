@@ -6,8 +6,8 @@
 ### Change current working directory to a location for installing ProTrek
 
 ```
-cd protrekfun/..
-source protrekfun/install_protrek.sh
+cd resitrek/..
+source resitrek/install_protrek.sh
 ```
 This will install the ProTrek repository under directory name ProTrek. The script prints the absolute pathname of that installation directory,
 that should be used in subsequent steps
@@ -17,7 +17,10 @@ that should be used in subsequent steps
 This program uses the ProTrek model to determine protein function one a residue level.
 Usage:
 
-`python resitrek.py <PROTREK_PATH> <UNIPROT-ID> <3D-STRUCTURE>`
+```
+cd resitrek
+python scripts/resitrek.py <PROTREK_PATH> <UNIPROT-ID> <3D-STRUCTURE>
+```
 
 With 
 
@@ -36,7 +39,7 @@ is `../ProTrek`.
 Then, the program can be called with:
 ```
  cd resitrek
- python scripts/resitrek.py ../ProtTrek P23946 example/example/8ac8.cif 
+ python scripts/resitrek.py ../ProtTrek P23946 example/8ac8.cif 
     
 ```
 
